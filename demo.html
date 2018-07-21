@@ -1034,8 +1034,8 @@ body {
     <div class="text part2">
       <anim-word v-bind:text="word2" @poof="rem"></anim-word>
     </div>
-    <div class="how-to"> <span v-if="clickTimes === 0">Just click a letter...</span><span v-else-if="clickTimes >= 5 && clickTimes < totalLetters">Hahahahaaaa! Click em all!!</span><span v-else-if="clickTimes >= totalLetters">Yay you did it! You did it!!</span><span v-else="v-else">Keep going... </span></div>
-
+    <div class="how-to"> <span v-if="clickTimes === 0">点击文字试一下</span><span v-else-if="clickTimes >= 5 && clickTimes < totalLetters">哈哈哈哈，全都点一遍</span><span v-else-if="clickTimes >= totalLetters">点的越多陶青青越美</span><span v-else="v-else">继续继续啊~</span></div>
+     <div style="font-size: 40px; color: darkgrey;">点<a href="frist.html">这里</a>继续……</div>
   </div>
   <div class="reset" @click="back">
     <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
