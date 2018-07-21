@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>一个关于美不美的网站</title>
+<style>
+    body{
+        background-color: black;
+        align-content: center;
+    }
+    .word{
+        color: white;
+        font-size: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60%;
+        width: 80%;
+        height: 20%;
+    }
+
+
+    @import url(https://fonts.googleapis.com/css?family=Finger+Paint);
+    body {
+        background: black;
+        overflow: hidden;
+        font: 5vw/100vh "Finger Paint";
+        text-align: center;
+        color: transparent;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    span {
+        display: inline-block;
+        text-shadow: 0 0 0 whitesmoke;
+        -webkit-animation: smoky 5s 3s both;
+        animation: smoky 5s 3s both;
+    }
+
+    span:nth-child(even) {
+        -webkit-animation-name: smoky-mirror;
+        animation-name: smoky-mirror;
+    }
+
+    @-webkit-keyframes smoky {
+        60% {
+            text-shadow: 0 0 40px whitesmoke;
+        }
+        to {
+            -webkit-transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+            transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+            text-shadow: 0 0 20px whitesmoke;
+            opacity: 0;
+        }
+    }
+
+    @keyframes smoky {
+        60% {
+            text-shadow: 0 0 40px whitesmoke;
+        }
+        to {
+            -webkit-transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+            transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+            text-shadow: 0 0 20px whitesmoke;
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes smoky-mirror {
+        60% {
+            text-shadow: 0 0 40px whitesmoke;
+        }
+        to {
+            -webkit-transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+            transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+            text-shadow: 0 0 20px whitesmoke;
+            opacity: 0;
+        }
+    }
+    @keyframes smoky-mirror {
+        60% {
+            text-shadow: 0 0 40px whitesmoke;
+        }
+        to {
+            -webkit-transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+            transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+            text-shadow: 0 0 20px whitesmoke;
+            opacity: 0;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+<div class="word">
+<span>有</span>
+<span>些</span>
+<span>问</span>
+<span>题</span>
+<span>要</span>
+<span>问</span>
+<span>你</span>
+<span>，</span>
+<span>你</span>
+<span>敢</span>
+<span>继</span>
+<span>续</span>
+<span>吗</span>
+<span>？</span>
+
+</div>
+</body>
+</html>
