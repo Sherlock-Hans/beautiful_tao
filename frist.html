@@ -11,7 +11,7 @@
 
         .word {
             color: white;
-            font-size: 42px;
+            font-size: 80px;
             margin-left: auto;
             margin-right: auto;
             margin-top: 45%;
@@ -19,61 +19,110 @@
             height: 40%;
             text-align: center;
         }
-
-        .button_1 {
-            width: 80px;
-            height: 40px;
+.word button{
+            width: 120px;
+            height: 75px;
+            font-size: 30px;
         }
+        .yinchang{
 
-        .button_2 {
-            width: 80px;
-            height: 40px;
-        }
-
-        .button_3 {
-            width: 80px;
-            height: 40px;
         }
 
     </style>
 </head>
 <body>
-<div class="word">
+<div id="frist" class="word">
     第一个问题：
-    <h3> 陶青青美吗？</h3>
+    <h2>陶青青美吗？</h2>
     <p>
-        <button class="button_1">超级美</button> &nbsp;
-        <button class="button_2">一般般</button> &nbsp;
-        <button class="button_3">不知道</button>
+        <button id="button_1" class="button">超级美</button> &nbsp;
+        <button id="button_2" class="button">一般般</button> &nbsp;
+        <button id="button_3" class="button">不知道</button>
     </p>
 
 </div>
-<div class="word">
-    第一个问题：
-    陶青青美吗？
+<div id="second" class="word">
+    第二个问题：
+    <br>陶青青是不是有沉鱼落雁，闭月羞花之颜？
+    <p>
+        <button id="button_4">是的哦</button> &nbsp;
+        <button id="button_5">不是！</button> &nbsp;
+    </p>
 </div>
-<div class="word">
-    第一个问题：
-    陶青青美吗？
+<div id="third" class="word">
+    请问“芙蓉不及美人妆，水殿风来珠翠香。”是描述谁的？
+    <p>
+        <button id="button_6">贾玲</button> &nbsp;
+        <button id="button_7">邓超</button> &nbsp;
+        <button id="button_8">陶青青</button> &nbsp;
+    </p>
 </div>
-<div class="word">
-    第一个问题：
-    陶青青美吗？
+<div id="four" class="word">
+    下面这些成语是形容谁的？
+    一顾倾城，才智过人，花容月貌，慧智兰心，别具慧眼，天生丽质，才貌双全……
+    <p>
+        <button id="button_10">陶青青</button> &nbsp;
+        <button id="button_11">陶青青</button> &nbsp;
+        <button id="button_12">陶青青</button> &nbsp;
+    </p>
 </div>
+
+<div id="five" class="word">
+   最后一题：
+    你还敢继续下去吗？我觉得你应该继续，后面不再为难你的智商~
+    <p>
+        <button id="button_9">点击继续</button> &nbsp;
+    </p>
+</div>
+
 </body>
 <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
     $(function () {
-        $('.button_1').click(function () {
+        $('#button_1').click(function () {
+            alert("恭喜回答正确");
+            $('#frist').
+        });
+        $('#button_2').click(function () {
+            alert("想好了再选！！！");
+        });
+        $('#button_3').click(function () {
+            alert("那就默认第一个了！");
+        });
+
+    //------------
+        $('#button_4').click(function () {
+            alert("恭喜回答正确,你挺聪明的");
+            $('#frist').addClass()
+        });
+        $('#button_5').click(function () {
+            alert("你怕是个智障哦，这么明显看不出来");
+        });
+        $('#button_6').click(function () {
+            alert("你是不是眼瞎啊！");
+        });
+        //------
+        $('#button_7').click(function () {
+            alert("你已经不能用智障来形容了");
+            $('#frist').addClass()
+        });
+        $('#button_8').click(function () {
+            alert("你也是饱读诗书啊，一看就有才");
+        });
+        $('#button_9').click(function () {
+            window.onload.href="index2.html";
+        });
+
+        $('#button_10').click(function () {
             alert("恭喜回答正确");
             $('#frist').addClass()
         });
-        $('.button_2').click(function () {
-            alert("想好了再选！！！");
+        $('#button_11').click(function () {
+            alert("是的，我知道这题你都不要想的就知道答案");
         });
-        $('.button_3').click(function () {
-            alert("那就默认第一个了！");
+        $('#button_12').click(function () {
+            alert("少年不错哦！");
         })
     });
 </script>
