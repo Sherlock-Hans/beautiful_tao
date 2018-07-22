@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>一个关于美不美的网站</title>
+    <script src="js/jquery-1.4.2.min.js"></script>
     <style>
         body {
             background-color: black;
@@ -24,8 +25,11 @@
             height: 75px;
             font-size: 30px;
         }
-        .yinchang{
-
+        .hide{
+           display: none;
+        }
+        .show{
+            display: block;
         }
 
     </style>
@@ -41,7 +45,7 @@
     </p>
 
 </div>
-<div id="second" class="word">
+<div id="second" class="word hide">
     第二个问题：
     <br>陶青青是不是有沉鱼落雁，闭月羞花之颜？
     <p>
@@ -49,7 +53,7 @@
         <button id="button_5">不是！</button> &nbsp;
     </p>
 </div>
-<div id="third" class="word">
+<div id="third" class="word hide">
     请问“芙蓉不及美人妆，水殿风来珠翠香。”是描述谁的？
     <p>
         <button id="button_6">贾玲</button> &nbsp;
@@ -57,7 +61,7 @@
         <button id="button_8">陶青青</button> &nbsp;
     </p>
 </div>
-<div id="four" class="word">
+<div id="four" class="word hide">
     下面这些成语是形容谁的？
     一顾倾城，才智过人，花容月貌，慧智兰心，别具慧眼，天生丽质，才貌双全……
     <p>
@@ -67,7 +71,7 @@
     </p>
 </div>
 
-<div id="five" class="word">
+<div id="five" class="word hide">
    最后一题：
     你还敢继续下去吗？我觉得你应该继续，后面不再为难你的智商~
     <p>
@@ -77,12 +81,13 @@
 
 </body>
 <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
 <script>
     $(function () {
         $('#button_1').click(function () {
             alert("恭喜回答正确");
-            $('#frist').
+            $("#frist").addClass('hide');
+            $("#second").removeClass('hide');
         });
         $('#button_2').click(function () {
             alert("想好了再选！！！");
@@ -94,7 +99,8 @@
     //------------
         $('#button_4').click(function () {
             alert("恭喜回答正确,你挺聪明的");
-            $('#frist').addClass()
+            $('#second').addClass('hide')
+            $('#third').removeClass('hide')
         });
         $('#button_5').click(function () {
             alert("你怕是个智障哦，这么明显看不出来");
@@ -105,10 +111,11 @@
         //------
         $('#button_7').click(function () {
             alert("你已经不能用智障来形容了");
-            $('#frist').addClass()
         });
         $('#button_8').click(function () {
             alert("你也是饱读诗书啊，一看就有才");
+            $('#third').addClass('hide')
+            $('#four').removeClass('hide')
         });
         $('#button_9').click(function () {
             window.onload.href="index2.html";
@@ -116,13 +123,18 @@
 
         $('#button_10').click(function () {
             alert("恭喜回答正确");
-            $('#frist').addClass()
+            $('#four').addClass('hide');
+            $('#five').removeClass('hide')
         });
         $('#button_11').click(function () {
             alert("是的，我知道这题你都不要想的就知道答案");
+            $('#four').addClass('hide');
+            $('#five').removeClass('hide')
         });
         $('#button_12').click(function () {
             alert("少年不错哦！");
+            $('#four').addClass('hide');
+            $('#five').removeClass('hide')
         })
     });
 </script>
