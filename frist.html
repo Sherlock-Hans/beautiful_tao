@@ -58,18 +58,16 @@
 </head>
 <body>
 <div id="frist" class="word">
-    第一个问题：
     <h2>陶青青美吗？</h2>
     <p>
         <button id="button_1" class="button">超级美</button> &nbsp;
-        <button id="button_2" class="button">一般般</button> &nbsp;
+        <button id="button_2" class="button">不美</button> &nbsp;
         <button id="button_3" class="button">不知道</button>
     </p>
 
 </div>
 <div id="second" class="word hide">
-    第二个问题：
-    <br>陶青青是不是有沉鱼落雁，闭月羞花之颜？
+    <br>请问陶青青是不是有沉鱼落雁，闭月羞花之颜？
     <p>
         <button id="button_4">是的哦</button> &nbsp;
         <button id="button_5">不是！</button> &nbsp;
@@ -108,12 +106,12 @@
     $(function () {
 
         $('#button_1').click(function () {
-            swal("恭喜回答正确！", "", "success");
+            swal("恭喜回答正确！", "眼光不错~", "success");
             $("#frist").addClass('hide');
             $("#second").removeClass('hide');
         });
         $('#button_2').click(function () {
-            swal("想好了再选哦！", " ", "error");
+            swal("不要昧着良心说话哦！", "我知道你想选第一个", "error");
         });
         $('#button_3').click(function () {
             swal("那你选择第一个吧！");
@@ -121,7 +119,7 @@
 
         //------------
         $('#button_4').click(function () {
-            swal("恭喜回答正确,你挺聪明的！", "", "success");
+            swal("恭喜又回答正确！", "你挺聪明的", "success");
             $('#second').addClass('hide');
             $('#third').removeClass('hide')
         });
@@ -129,14 +127,14 @@
             swal("你怕是个智障哦，这么明显看不出来！", "你可以选择第一个", "error");
         });
         $('#button_6').click(function () {
-            swal("你是不是眼瞎啊！", "", "error");
+            swal("你是不是眼瞎啊！", "对你无语", "error");
         });
         //------
         $('#button_7').click(function () {
-            sweetAlert("你已经不能用智障来形容了！", "", "error");
+            sweetAlert("你已经不能用智障来形容了！", "智商捉急啊你", "error");
         });
         $('#button_8').click(function () {
-            sweetAlert("你也是饱读诗书啊，一看就有才", "", "success");
+            sweetAlert("你也是饱读诗书啊，一看就有才", "我很欣赏你", "success");
             $('#third').addClass('hide');
             $('#four').removeClass('hide')
         });
@@ -145,17 +143,17 @@
         });
 
         $('#button_10').click(function () {
-            swal("你真厉害，这都能选对", "", "success");
+            swal("你真厉害，这都能选对", "不错不错", "success");
             $('#four').addClass('hide');
             $('#five').removeClass('hide')
         });
         $('#button_11').click(function () {
-            swal("是的，我知道这题你都不要用想的就知道答案", "", "success");
+            swal("是的，我知道这题你都不要用想的就知道答案", "鼓励一下", "success");
             $('#four').addClass('hide');
             $('#five').removeClass('hide')
         });
         $('#button_12').click(function () {
-            swal("少年不错哦！", "", "success");
+            swal("少年不错哦！", "下个问题对你没挑战了", "success");
             $('#four').addClass('hide');
             $('#five').removeClass('hide')
         })
