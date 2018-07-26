@@ -14,6 +14,7 @@
         .word {
             color: white;
             font-size: 80px;
+            font-family: "隶书",serif;
             margin-left: auto;
             margin-right: auto;
             margin-top: 45%;
@@ -27,30 +28,32 @@
             height: 75px;
             font-size: 30px;
             color: white;
-            background-color: gray;
-            border: solid 1px grey;
+            background-color: rgba(147,147,147,0.8);
             border-radius: 10px;
         }
 
         .hide {
             display: none;
         }
-        .next{
+
+        .next {
             font-size: 25px;
             text-align: center;
             line-height: 60px;
-            background-color: chocolate;
-            border:cornsilk 1px solid;
+            background-color: grey;
+            border: cornsilk 1px solid;
             border-radius: 30px;
             width: 120px;
             height: 60px;
             margin-left: auto;
             margin-right: auto;
         }
-        .next a{
-          text-decoration: none;
+
+        .next a {
+            text-decoration: none;
         }
-        .next a :hover{
+
+        .next a :hover {
             color: cornsilk;
         }
     </style>
@@ -96,8 +99,8 @@
     你还敢继续下去吗？我觉得你应该继续，后面不再为难你的智商~
 
     <p></p>
-    <div class="next" >
-        <a  href="xing.html">点击继续</a>
+    <div class="next">
+        <a href="xing.html">点击继续</a>
     </div>
 </div>
 
@@ -107,8 +110,10 @@
 
         $('#button_1').click(function () {
             swal("恭喜回答正确！", "眼光不错~", "success");
-            $("#frist").addClass('hide');
-            $("#second").removeClass('hide');
+            setTimeout(function () {
+                $("#frist").addClass('hide');
+                $("#second").removeClass('hide');
+            }, 2000);
         });
         $('#button_2').click(function () {
             swal("不要昧着良心说话哦！", "我知道你想选第一个", "error");
@@ -120,8 +125,10 @@
         //------------
         $('#button_4').click(function () {
             swal("恭喜又回答正确！", "你挺聪明的", "success");
-            $('#second').addClass('hide');
-            $('#third').removeClass('hide')
+            setTimeout(function () {
+                $('#second').addClass('hide');
+                $('#third').removeClass('hide')
+            }, 2000);
         });
         $('#button_5').click(function () {
             swal("你怕是个智障哦，这么明显看不出来！", "你可以选择第一个", "error");
@@ -135,27 +142,32 @@
         });
         $('#button_8').click(function () {
             sweetAlert("你也是饱读诗书啊，一看就有才", "我很欣赏你", "success");
-            $('#third').addClass('hide');
-            $('#four').removeClass('hide')
-        });
-        $('#button_9').click(function () {
-            window.onload.href = "index2.html";
+            setTimeout(function () {
+                $('#third').addClass('hide');
+                $('#four').removeClass('hide')
+            }, 2000);
         });
 
         $('#button_10').click(function () {
             swal("你真厉害，这都能选对", "不错不错", "success");
-            $('#four').addClass('hide');
-            $('#five').removeClass('hide')
+            setTimeout(function () {
+                $('#four').addClass('hide');
+                $('#five').removeClass('hide')
+            }, 2000);
         });
         $('#button_11').click(function () {
             swal("是的，我知道这题你都不要用想的就知道答案", "鼓励一下", "success");
-            $('#four').addClass('hide');
-            $('#five').removeClass('hide')
+            setTimeout(function () {
+                $('#four').addClass('hide');
+                $('#five').removeClass('hide')
+            }, 2000);
         });
         $('#button_12').click(function () {
-            swal("少年不错哦！", "下个问题对你没挑战了", "success");
-            $('#four').addClass('hide');
-            $('#five').removeClass('hide')
+            swal("你真的很棒哦！", "下个问题对你没挑战了", "success");
+            setTimeout(function () {
+                $('#four').addClass('hide');
+                $('#five').removeClass('hide')
+            }, 2000);
         })
     });
 </script>
