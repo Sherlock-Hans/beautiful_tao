@@ -1035,7 +1035,7 @@ body {
       <anim-word v-bind:text="word2" @poof="rem"></anim-word>
     </div>
     <div class="how-to"> <span v-if="clickTimes === 0">点击文字试一下</span><span v-else-if="clickTimes >= 5 && clickTimes < totalLetters">哈哈哈哈，全都点一遍</span><span v-else-if="clickTimes >= totalLetters">点的越多陶青青越美</span><span v-else="v-else">继续继续啊~</span></div>
-     <div style="font-size: 40px; color: darkgrey;">点<a href="frist.html">这里</a>继续……</div>
+     <!--<div style="font-size: 40px; color: darkgrey;">点<a href="frist.html">这里</a>继续……</div>-->
   </div>
   <div class="reset" @click="back">
     <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1045,99 +1045,99 @@ body {
 </div>
 
 
-<script>
-Vue.component("anim-word", {
-  props: ["text"],
-  template: `
-  <div>
-    <span class="letter" v-for="(letter, index) in text.letters" 
-      @click="$emit('poof', text.id, letter.char)"
-      v-bind:class="{ poofed: !letter.alive }"
-    >
-      <div class="character">{{ letter.char }}</div> 
-      <span></span>
-    </span>
-  </div>
-  `
-});
+<!--<script>-->
+<!--Vue.component("anim-word", {-->
+  <!--props: ["text"],-->
+  <!--template: `-->
+  <!--<div>-->
+    <!--<span class="letter" v-for="(letter, index) in text.letters" -->
+      <!--@click="$emit('poof', text.id, letter.char)"-->
+      <!--v-bind:class="{ poofed: !letter.alive }"-->
+    <!--&gt;-->
+      <!--<div class="character">{{ letter.char }}</div> -->
+      <!--<span></span>-->
+    <!--</span>-->
+  <!--</div>-->
+  <!--`-->
+<!--});-->
 
-new Vue({
-  el: "#app",
-  data: {
-    clickTimes: 0,
-    word1: {
-      id: 1,
-      letters: [
-        { char: "我", alive: true },
-        { char: "有", alive: true },
-        { char: "些", alive: true },
-        { char: "问", alive: true },
-        { char: "题", alive: true },
-        { char: "想", alive: true }
-      ]
-    },
-    word2: {
-      id: 2,
-      letters: [
-        { char: "问", alive: true },
-        { char: "你", alive: true },
-        { char: "，", alive: true },
-        { char: "你", alive: true },
-        { char: "敢", alive: true },
-        { char: "继", alive: true },
-        { char: "续", alive: true },
-        { char: "吗", alive: true }
-      ]
-    },
-    totalLetters: 0
-  },
-  mounted() {
-    this.totalLetters = this.word1.letters.length + this.word2.letters.length;
-  },
-  methods: {
-    rem(id, letter) {
-      // update text
-      if (!this.clicked) {
-        this.clickTimes++;
-      }
+<!--new Vue({-->
+  <!--el: "#app",-->
+  <!--data: {-->
+    <!--clickTimes: 0,-->
+    <!--word1: {-->
+      <!--id: 1,-->
+      <!--letters: [-->
+        <!--{ char: "我", alive: true },-->
+        <!--{ char: "有", alive: true },-->
+        <!--{ char: "些", alive: true },-->
+        <!--{ char: "问", alive: true },-->
+        <!--{ char: "题", alive: true },-->
+        <!--{ char: "想", alive: true }-->
+      <!--]-->
+    <!--},-->
+    <!--word2: {-->
+      <!--id: 2,-->
+      <!--letters: [-->
+        <!--{ char: "问", alive: true },-->
+        <!--{ char: "你", alive: true },-->
+        <!--{ char: "，", alive: true },-->
+        <!--{ char: "你", alive: true },-->
+        <!--{ char: "敢", alive: true },-->
+        <!--{ char: "继", alive: true },-->
+        <!--{ char: "续", alive: true },-->
+        <!--{ char: "吗", alive: true }-->
+      <!--]-->
+    <!--},-->
+    <!--totalLetters: 0-->
+  <!--},-->
+  <!--mounted() {-->
+    <!--this.totalLetters = this.word1.letters.length + this.word2.letters.length;-->
+  <!--},-->
+  <!--methods: {-->
+    <!--rem(id, letter) {-->
+      <!--// update text-->
+      <!--if (!this.clicked) {-->
+        <!--this.clickTimes++;-->
+      <!--}-->
 
-      // word 1
-      if (id === 1) {
-        this.word1.letters = this.word1.letters.map(function(item) {
-          if (item.char == letter) {
-            item.alive = false;
-          }
-          return item;
-        });
-      } else if (id === 2) {
-        // word 2
-        this.word2.letters = this.word2.letters.map(function(item) {
-          if (item.char === letter && item.alive !== false) {
-            item.alive = false;
-            letter = null;
-          }
-          return item;
-        });
-      }
-    },
+      <!--// word 1-->
+      <!--if (id === 1) {-->
+        <!--this.word1.letters = this.word1.letters.map(function(item) {-->
+          <!--if (item.char == letter) {-->
+            <!--item.alive = false;-->
+          <!--}-->
+          <!--return item;-->
+        <!--});-->
+      <!--} else if (id === 2) {-->
+        <!--// word 2-->
+        <!--this.word2.letters = this.word2.letters.map(function(item) {-->
+          <!--if (item.char === letter && item.alive !== false) {-->
+            <!--item.alive = false;-->
+            <!--letter = null;-->
+          <!--}-->
+          <!--return item;-->
+        <!--});-->
+      <!--}-->
+    <!--},-->
 
-    back() {
-      // Reset text
-      this.clickTimes = 0;
+    <!--back() {-->
+      <!--// Reset text-->
+      <!--this.clickTimes = 0;-->
 
-      // Restore letter position
-      this.word1.letters = this.word1.letters.map(function(item) {
-        item.alive = true;
-        return item;
-      });
-      this.word2.letters = this.word2.letters.map(function(item) {
-        item.alive = true;
-        return item;
-      });
-    }
-  }
-});
-</script>
+      <!--// Restore letter position-->
+      <!--this.word1.letters = this.word1.letters.map(function(item) {-->
+        <!--item.alive = true;-->
+        <!--return item;-->
+      <!--});-->
+      <!--this.word2.letters = this.word2.letters.map(function(item) {-->
+        <!--item.alive = true;-->
+        <!--return item;-->
+      <!--});-->
+    <!--}-->
+  <!--}-->
+<!--});-->
+<!--</script>-->
 
 </body>
 </html>
